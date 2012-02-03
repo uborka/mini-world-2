@@ -1,0 +1,221 @@
+span.red {
+	color: #c00;
+	font-weight: bold;
+}
+
+/* DIALOGS */
+
+div.cms_dialog form {
+	background-color: #eee;
+	-moz-border-radius: 3px;
+	padding: 10px;
+	font-family: sans-serif;
+	font-size: 10pt;
+}
+div.cms_dialog form div {
+	padding: 2px 0;
+	border-bottom: 1px solid #ccc;
+}
+div.cms_dialog form div label {
+	display: inline-block;
+	width: 260px;
+}
+div.cms_dialog form div label.radio {
+	width: auto;
+}
+div.cms_dialog form div input[type=text],
+div.cms_dialog form div select {
+	border: 1px solid #ccc;
+	width: 350px;
+}
+div.cms_dialog form div.userdata {
+	height: 75px;
+	width: 340px;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	-moz-border-radius: 3px;
+	padding: 5px;
+	margin: 2px 0 0 264px;
+	overflow: hidden;
+}
+div.cms_dialog form div.contractdata {
+	height: 100px;
+	width: 340px;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	-moz-border-radius: 3px;
+	padding: 5px;
+	margin: 2px 0 0 264px;
+	overflow: hidden;
+}
+div.cms_dialog form div.userdata div,
+div.cms_dialog form div.contractdata div {
+	border: none;
+}
+div.cms_dialog form div.userdata div.fullname,
+div.cms_dialog form div.contractdata div.fullname {
+	font-weight: bold;
+}
+div.cms_dialog form div.userdata div.fullname span.username,
+div.cms_dialog form div.contractdata div.fullname span.username,
+div.cms_dialog form div.userdata div.fullname em,
+div.cms_dialog form div.contractdata div.fullname em {
+	font-weight: normal;
+}
+div.cms_dialog form div.userdata div.email,
+div.cms_dialog form div.userdata div.phone,
+div.cms_dialog form div.userdata div.address,
+div.cms_dialog form div.contractdata div.package,
+div.cms_dialog form div.contractdata div.fullname,
+div.cms_dialog form div.contractdata div.email,
+div.cms_dialog form div.contractdata div.phone,
+div.cms_dialog form div.contractdata div.address,
+div.cms_dialog form div.contractdata div.date_contract {
+	font-size: 8pt;
+}
+div.cms_dialog form div.notes {
+	border: none;
+}
+div.cms_dialog form div.notes label {
+	display: block;
+}
+div.cms_dialog form div.notes textarea {
+	border: 1px solid #ccc;
+	width: 614px;
+}
+div.cms_dialog div.invoice_items {
+	border: none;
+}
+div.cms_dialog div.invoice_items div {
+	border: none;
+}
+div.cms_dialog div.invoice_items div.item label {
+	width: 560px;
+}
+div.cms_dialog div.invoice_items div.item label span.user {
+	display: inline-block;
+	width: 380px;
+	text-align: left;
+}
+div.cms_dialog div.invoice_items div.item label span.total {
+	display: inline-block;
+	width: 150px;
+	text-align: right;
+}
+div.cms_dialog div.invoice_items div.item a.details {
+	width: 50px;
+}
+div.cms_dialog div.invoice_items div.item div.subitems {
+	display: none;
+	font-size: 8pt;
+	padding: 0 10px;
+}
+div.cms_dialog div.invoice_items div.item a.details div {
+	border-bottom: 1px solid #ccc;
+}
+div.cms_dialog div.invoice_items div.item div.subitems span.date {
+	display: inline-block;
+	width: 85px;
+	text-align: center;
+}
+div.cms_dialog div.invoice_items div.item div.subitems span.subitem {
+	display: inline-block;
+	width: 300px;
+}
+div.cms_dialog div.invoice_items div.item div.subitems span.price {
+	display: inline-block;
+	width: 150px;
+	text-align: right;
+}
+div.cms_dialog div.dlg_message {}
+div.cms_dialog div.dlg_message div.error ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;	
+}
+div.cms_dialog div.dlg_message div.error ul li {
+	text-align: left;
+	color: #ff0;
+	font-size: 10pt;
+	font-weight: bold;
+}
+div.cms_dialog div.dlg_message div.error {
+	background-color: #c00;
+	-moz-border-radius: 3px;
+    color: #ff0;
+    font-size: 16pt;
+    font-weight: bold;
+    padding: 15px;
+    text-align: center;
+}
+div.cms_dialog div.dlg_message div.ok {
+	background-color: #060;
+	-moz-border-radius: 3px;
+    color: #ff0;
+    font-size: 16pt;
+    font-weight: bold;
+    padding: 15px;
+    text-align: center;
+}
+div.cms_dialog p {
+	font-size: 10pt;
+	margin: 5px 0;
+}
+
+/* AUTOCOMPLETE */ 
+
+.ac_results {
+	padding: 0px;
+	border: 1px solid #999;
+	-moz-border-radius: 3px;
+	background-color: white;
+	overflow: hidden;
+	z-index: 99999;
+}
+.ac_results ul {
+	width: 100%;
+	list-style-position: outside;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.ac_results li {
+	margin: 0;
+	padding: 2px 5px;
+	cursor: default;
+	display: block;
+	/* 
+	if width will be 100% horizontal scrollbar will apear 
+	when scroll mode will be used
+	*/
+	/*width: 100%;*/
+	font-size: 9pt;
+	/* 
+	it is very important, if line-height not setted or setted 
+	in relative units scroll will be broken in firefox
+	*/
+	line-height: 16px;
+	overflow: hidden;
+}
+.ac_loading {
+	background: white url('images/ac_indicator.gif') right center no-repeat;
+}
+.ac_odd {
+	background-color: #eee;
+}
+.ac_over {
+	background-color: #9cf;
+}
+
+/* DEBUG */
+
+div#debug_info {
+	background-color: #fff;
+	color: #000;
+	text-align: left;
+	position: absolute;
+	width: 100%;
+	margin-top: 10px;
+	font-size: 8pt;
+	overflow: hidden;
+}

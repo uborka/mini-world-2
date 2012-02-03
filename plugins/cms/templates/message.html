@@ -1,0 +1,6 @@
+<div id="message{this>id}" class="messagebox"><div class="{this>class}">{this>description}</div></div>
+<script>
+$(document).ready(function(){
+	if ($.notifyBar) $.notifyBar({ delay: 5000, jqObject: $('#message{this>id}') });
+});
+</script>

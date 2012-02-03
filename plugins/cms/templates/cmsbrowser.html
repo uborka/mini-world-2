@@ -1,0 +1,14 @@
+{this>message}
+
+<h1>Fájlböngésző</h1>
+
+<div id="cmslist"></div>
+
+<script type="text/javascript">
+$(function() {
+	var finder = new CKFinder();
+	finder.basePath = '/include/ckfinder/';
+	finder.height = '80%';
+	finder.appendTo('cmslist');
+});
+</script>

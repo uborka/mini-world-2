@@ -1,0 +1,43 @@
+/* OVERVIEW */
+
+div#overview h3 {
+	font-size: 12pt;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin: 0 0 10px 0;
+}
+div#overview div.right-column {
+	float: right;
+	width: 30%;
+}
+div#overview div.right-column div.overview-box {
+	border: 1px solid #ccc;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	padding: 10px;
+	margin-bottom: 10px;
+	background: #fff;
+}
+div#overview div.right-column div.overview-box ul,
+div#overview div.right-column div.overview-box ol {
+	padding-left: 35px;
+}
+div#overview div.right-column li.disabled {
+	color: #ccc;
+}
+div#overview div.left-column {
+	width: 65%;
+}
+div.overview-box a,
+div.overview-box a:link,
+div.overview-box a:visited {
+	text-decoration: none;
+	color: blue;
+}
+div.overview-box a:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+iframe#dialog {
+	display: none;
+}

@@ -1,0 +1,85 @@
+{this>message}
+
+<h1>{this>title}</h1>
+
+<div id="cmslist">
+
+	<form action="?" method="get">
+		<input type="hidden" name="a" value="cmslist" />
+		<input type="hidden" name="m" value="{this>menu}" />
+		<input type="hidden" name="page" value="{this>page}" />
+		<input type="hidden" name="order_field" value="{this>order_field}" />
+		<input type="hidden" name="order_dir" value="{this>order_dir}" />
+
+	<table>
+		
+		<thead>
+		
+			{this>header}
+
+			<tr id="cmslist_searchbar">
+				<td class="icon_before"></td>
+				<td colspan="{this>col_nums}" align="left">
+						<table>
+							<thead>
+							<tr>
+								<td>Szűrési feltételek: </td>
+								<td>{this>searchbar}</td>
+								<td><input type="submit" name="submit" value="Szűrés" {this>searchbar_disabled}/></td>
+							</tr>
+							</thead>
+						</table>
+				</td>
+				<td class="icon_after"></td>
+			</tr>
+		
+		</thead>
+		
+		<tbody>
+		
+			{this>items}
+			
+		</tbody>
+		
+		<tfoot>
+		
+			<tr id="cmslist_footer">
+				<td class="icon_before"></td>
+				<td colspan="{this>col_nums}">
+
+					{this>pager}
+					
+					{this>jumper}
+					
+					{this>new_command}
+					
+					<span class="rpp">
+						Sorok száma:
+						<input type="text" name="rpp" value="{this>rpp}" />
+					</span>
+					
+				</td>
+				<td class="icon_after"></td>
+			</tr>
+			
+			<tr id="cmslist_footer">
+				<td class="icon_before"></td>
+				<td colspan="{this>col_nums}">
+
+					{this>extra_commands}
+					
+				</td>
+				<td class="icon_after"></td>
+			</tr>
+			
+		</tfoot>
+	
+	</table>
+	
+	</form>
+
+</div>
+
+<script type="text/javascript">
+$(function() {});
+</script>

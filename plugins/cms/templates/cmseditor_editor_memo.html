@@ -1,0 +1,10 @@
+<tr>
+	<td class="title">{this>title}{this>tip}</td>
+	<td class="editor">
+		<div>
+			<textarea rows="{this>rownums}" name="{this>name}" id="{this>name}" >{this>value}</textarea>
+		</div>
+		<div class="small charcounter">Maximális leütések száma: <span id="limit_{this>name}"></span></div>
+		<script type="text/javascript">$('#{this>name}').limit('{this>maxlength}','#limit_{this>name}')</script>
+	</td>
+</tr>

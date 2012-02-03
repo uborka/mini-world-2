@@ -1,0 +1,34 @@
+<tr>
+	<td class="title">{this>title}{this>tip}</td>
+	<td class="editor">
+		<input type="{this>type}" name="{this>name}" id="{this>name}" value="{this>value}" />
+		<div>
+		<ul class="container" id="{this>name}_container_selected">
+			{this>selected_items}
+		</ul>
+		<ul class="container" id="{this>name}_container_available">
+			{this>available_items}
+		</ul>
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$('#{this>name}_container_selected').sortable({
+				connectWith: '.container',
+				placeholder: 'placeholder',
+				update:function(event, ui){
+					var ids = '';
+					$('#{this>name}_container_selected .item').each(function(index){
+						if (ids!='') ids+=',';
+						ids += $(this).attr('rel');
+					});
+					$('#{this>name}').val(ids);
+				}
+			}).disableSelection();
+			$('#{this>name}_container_available').sortable({
+				connectWith: '.container',
+				placeholder: 'placeholder'
+			}).disableSelection();
+		});
+		</script>
+		</div>
+	</td>
+</tr>

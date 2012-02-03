@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="hu-HU" xmlns="http://www.w3.org/1999/xhtml" dir="ltr" xml:lang="hu">
+
+<head>
+	<title>{lang:TITLE_SITE} CMS</title>
+	<meta http-equiv=Content-Type content="text/html; charset=utf-8" />
+	<meta name="description" content="PTI WPA 3.0" />
+	<meta name="robots" content="noindex,nofollow" />
+	<meta http-equiv="refresh" content="1200;url=/admin/?a=logoff" />
+	<link href="/favicon.gif" rel="shortcut icon" />
+	<link rel="stylesheet" href="/plugins/cms/templates/cms.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/plugins/cms/templates/dialogs.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/plugins/cms/templates/jquery-ui-1.8.css" type="text/css" media="screen" />
+	{this>css}
+	{this>scripts}
+</head>
+<!--
+/*
+ * PTI WPA - Web Page Admin 3.0
+ * Copyright (C) 2010; PTI Kft.;
+ *
+ * Ez a programkönyvtár szabad szoftver; terjeszthető illetve módosítható a
+ * Free Software Foundation által kiadott GNU Lesser General Public License
+ * dokumentumban leírtak, akár a licenc 2.1-es, akár (tetszőleges) későbbi
+ * változata szerint.
+ *
+ * Ez a programkönyvtár abban a reményben kerül közreadásra, hogy hasznos lesz,
+ * de minden egyéb GARANCIA NÉLKÜL, az ELADHATÓSÁGRA vagy VALAMELY CÉLRA VALÓ
+ * ALKALMAZHATÓSÁGRA való származtatott garanciát is beleértve. További
+ * részleteket a GNU Lesser General Public License tartalmaz.
+ *
+ * A felhasználónak a programmal együtt meg kell kapnia a GNU Lesser
+ * General Public License egy példányát; ha mégsem kapta meg, akkor
+ * ezt a Free Software Foundationnak küldött levélben jelezze
+ * (cím: Free Software Foundation Inc., 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.)
+ */
+-->
+
+<body id="body">
+
+<a id="top" name="top"></a>
+
+<div id="header">
+	<a class="logo" href="{this>http_host}/admin" title="Vissza a CMS súgóra" style="background-image:url({param:CMS_LOGO});">keresek.hu CMS</a>
+	<ul class="commands">
+		<li><a href="?a=logoff">Kijelentkezés</a></li>
+		<li><a href="{this>http_host}/" target="_blank">Előnézet</a></li>
+	</ul>
+	{modul:languagebox}
+</div>
+
+{modul:cmsmenu}
+	
+<div id="content">{content}</div>
+	
+<div class="clear"></div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$.datepicker.setDefaults($.datepicker.regional['hu']);
+	$.reject({
+		reject: {  
+	        safari: false,  
+	        chrome: false,  
+	        firefox: false,  
+	        msie: true,  
+	        opera: true,  
+	        konqueror: true,  
+	        unknown: true },
+		display: ['firefox','chrome','safari'],
+		browserInfo: {  
+			firefox: {  
+				text: 'Firefox 3.5+',   
+	            url: 'http://www.mozilla.com/firefox/'  
+			},  
+	        safari: {  
+                text: 'Safari 4+',  
+                url: 'http://www.apple.com/safari/download/'  
+            },  
+	        chrome: {  
+                text: 'Chrome 5+',  
+                url: 'http://www.google.com/chrome/'  
+            }  
+		},    
+		header: 'A CMS rendszer nem támogatja az Ön böngészőjét',  
+		paragraph1: 'Az Ön böngészője nem támogatott a CMS aktuális változatában. Kérem, hogy a megadott böngészők valamelyikét használja!',  
+		paragraph2: 'Csak kattontson a kiválasztott ikonra, hogy a letöltési oldalra ugorjon.',  
+		close: false,
+	    imagePath: '/plugins/cms/templates/images/',  
+	    overlayBgColor: '#600',  
+	    overlayOpacity: 0.8,  
+	});
+});
+</script>
+
+<div id="debug_info">{debug_info}</div>
+
+</body>
+
+</html>

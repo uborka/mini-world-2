@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="hu-HU" xmlns="http://www.w3.org/1999/xhtml" dir="ltr" xml:lang="hu">
+
+<head>
+	<title>{lang:TITLE_SITE} CMS</title>
+	<meta http-equiv=Content-Type content="text/html; charset=utf-8" />
+	<meta name="description" content="PTI WPA 3.0" />
+	<meta name="robots" content="noindex,nofollow" />
+	<link href="/favicon.gif" rel="shortcut icon" />
+	<link rel="stylesheet" href="/plugins/cms/templates/logon.css" type="text/css" media="screen" />
+</head>
+<!--
+/*
+ * PTI WPA - Web Page Admin 3.0
+ * Copyright (C) 2010; PTI Kft.;
+ *
+ * Ez a programkönyvtár szabad szoftver; terjeszthető illetve módosítható a
+ * Free Software Foundation által kiadott GNU Lesser General Public License
+ * dokumentumban leírtak, akár a licenc 2.1-es, akár (tetszőleges) későbbi
+ * változata szerint.
+ *
+ * Ez a programkönyvtár abban a reményben kerül közreadásra, hogy hasznos lesz,
+ * de minden egyéb GARANCIA NÉLKÜL, az ELADHATÓSÁGRA vagy VALAMELY CÉLRA VALÓ
+ * ALKALMAZHATÓSÁGRA való származtatott garanciát is beleértve. További
+ * részleteket a GNU Lesser General Public License tartalmaz.
+ *
+ * A felhasználónak a programmal együtt meg kell kapnia a GNU Lesser
+ * General Public License egy példányát; ha mégsem kapta meg, akkor
+ * ezt a Free Software Foundationnak küldött levélben jelezze
+ * (cím: Free Software Foundation Inc., 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.)
+ */
+-->
+<body>
+
+	<h1 style="background-image:url({param:CMS_LOGO});">CMS</h1>
+	
+	<form id="logonform" action="?" method="post" class="dont-turn-off-the-lights">
+		<input type="hidden" name="a" value="logon" />
+		{this>message}
+		<p>
+			<label for="usr">Azonosító</label>
+			<input type="text" name="usr" id="usr" value="{session:usr}" />
+		</p>
+		<p>
+			<label for="psw">Jelszó</label>
+			<input type="password" name="psw" id="psw" value="" />
+		</p>
+		<p style="text-align:right;">
+			<span class="remember">
+				<input type="checkbox" name="auto" id="auto" value="1" />
+				<label for="auto">Automatikus belépés</label>
+			</span>
+			<input type="submit" name="fs" value="Belépés" />
+		</p>
+	</form>
+	
+<div id="debug_info">{debug_info}</div>
+
+</body>
+
+</html>

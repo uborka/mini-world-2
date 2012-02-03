@@ -1,0 +1,18 @@
+<tr>
+	<td class="title">{this>title}{this>tip}</td>
+	<td class="editor">
+		<input type="text" name="{this>name}" id="{this>name}" value="{this>value}" />
+		<script type="text/javascript">
+		$('#{this>name}').datepicker({
+			showAnim: 'blind',
+			changeMonth: true,
+			changeYear: true,
+			showTime: true,
+			stepMinutes: 15,  
+	        stepHours: 1,  
+	        altTimeField: '',  
+	        time24h: true
+		});
+		</script>
+	</td>
+</tr>

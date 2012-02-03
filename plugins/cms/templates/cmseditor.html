@@ -1,0 +1,81 @@
+{this>message}
+
+<h1>{this>title}</h1>
+
+<div id="cmseditor">
+
+	<form name="editor" id="editor" action="?" method="post">
+		<input type="hidden" name="a" value="cmseditor" />
+		<input type="hidden" name="todo" id="todo" value="{this>action}" />
+		<input type="hidden" name="m" value="{this>menu}" />
+		<input type="hidden" name="id" id="id" value="{this>id}" />
+		<input type="hidden" name="backurl" value="{this>backurl}" />
+		<input type="hidden" name="lang" value="{session:lang}" />
+
+		<table>
+
+			<thead>
+				<tr>
+					<td align="left" colspan="2">
+						<input type="button" name="cancel" value="Mégsem" onclick="document.location='{this>backurl}'"/>
+						<input class="clone" type="button" name="clone" value="Klónozás" {this>clone_disabled} />
+						<input type="button" name="prev" value="Előző"
+							{this>prevurl_disabled} onclick="document.location='{this>prevurl}'"/>
+						<input type="button" name="next" value="Következő"
+							{this>nexturl_disabled} onclick="document.location='{this>nexturl}'"/>
+						<span style="float:right;">
+							<input type="submit" name="submit" value="Mentés" />
+							<input type="submit" name="submitnclose" value="Mentés és bezárás" />
+						</span>
+					</td>
+				</tr>
+			</thead>
+
+			<tbody>{this>items}</tbody>
+
+			<tfoot>
+				<tr>
+					<td align="left" colspan="2">
+						<input type="button" name="cancel" value="Mégsem" onclick="document.location='{this>backurl}'"/>
+						<input class="clone" type="button" name="clone" value="Klónozás" {this>clone_disabled} />
+						<input type="button" name="prev" value="Előző"
+							{this>prevurl_disabled} onclick="document.location='{this>prevurl}'"/>
+						<input type="button" name="next" value="Következő"
+							{this>nexturl_disabled} onclick="document.location='{this>nexturl}'"/>
+						<span style="float:right;">
+							<input type="submit" name="submit" value="Mentés" />
+							<input type="submit" name="submitnclose" value="Mentés és bezárás" />
+						</span>
+					</td>
+				</tr>
+			</tfoot>
+
+		</table>
+
+	</form>
+
+</div>
+
+<div id="cmsdialog"></div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#editor thead input').button();
+	$('#editor tfoot input').button();
+	$('input.clone').click(function(){
+		$('#todo').val('insert');
+		$('#id').val('NEW');
+		$('input.clone').attr('disabled','disabled');
+		$('input.clone').addClass('ui-button-disabled');
+		$('input.clone').addClass('ui-state-disabled');
+		if ($.notifyBar) {
+			$.notifyBar({
+				delay: 2000,
+				cls: 'ok',
+				html: 'Rekord sikeresen klónozva.'
+			});
+		}
+	});
+	$('img.tip').tooltip({position:'center right',offset:[0,5]});
+});
+</script>

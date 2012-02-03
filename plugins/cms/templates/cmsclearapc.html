@@ -1,0 +1,19 @@
+{this>message}
+
+<h4>APC információk</h4>
+<p>Szegmensek száma: {this>num_seg}.</p>
+<p>Szegmensek mérete: {this>seg_size} MB.</p>
+<p>Elérhető memória: {this>avail_mem} MB.</p>
+<p>Blokkok száma: {this>block_nums}.</p>
+
+<p style="margin-top:10px">
+	<a id="clearcache" 
+		onclick="$('#dlg_edit').load('/ajax.php?a=cmsclearapc&todo=clear');"
+		style="width:100%">APC gyorsítótár törlése</a>
+</p>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('a#clearcache').button();
+})
+</script>

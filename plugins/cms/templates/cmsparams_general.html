@@ -1,0 +1,121 @@
+<div id="general">
+	
+	<table>
+		<tr>
+			<td>
+				<h3>Nyitóoldal</h3>
+				<div class="small">A megadott azonosító kulcsú oldalt fogja betölteni
+				a program abban az esetben, ha nincs meghatározva a betöltendő oldal.</div>
+				<div class="example">Például: <span>1</span></div>
+			</td>
+			<td><input type="text" name="open_page_id" value="{this>open_page_id}" /></td>
+		</tr>
+		<tr>
+			<td>
+				<h3>CMS logó</h3>
+				<div class="small">Ha szeretné a CMS-ben is saját cége logóját látni, akkor
+				ebben a mezőben adja meg a kép relatív URL-jét (elérési útvnalát) a
+				program gyökérmappájához képest. A kép pontosan 320×54 képpont méretű
+				lehet, javasolt átlátszó háttérrel.</div>
+				<div class="example">Például: <span>/plugins/cms/templates/images/fuge2-logo.png</span></div>
+			</td>
+			<td><input type="text" name="cms_logo" value="{this>cms_logo}" /></td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Alapértelmezett nyelv</h3>
+				<div class="small">Az alapértelmezett nyelv kódja az 
+				<a href="http://en.wikipedia.org/wiki/List_of_ISO_639-2_codes" target="_blank">ISO 639-2 Alpha 2</a> alapján.
+				Ha a böngésző nem azonosítja a nyelvét, illetve az nincs benne az
+				engedélyezett nyelvek listájában, akkor az oldal ezen a nyelven
+				fog megjelenni.</div>
+				<div class="example">Például: <span>hu</span></div>
+			</td>
+			<td><input type="text" name="lang_default" value="{this>lang_default}" /></td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Engedélyezett nyelvek</h3>
+				<div class="small">Az engedélyezett nyelvek kódjának listája (szintén
+				az ISO 639-2 alapján). Ha a bőngésző által megadott nyelvkód nincs ebben
+				a listában, akkor az oldal az alapértelmezett nyelven fog megjelenni.
+				Az értékeket vesszővel elválasztva, szóközök nélkül kell felsorolni.</div>
+				<div class="example">Például: <span>hu,en,de</span></div>
+			</td>
+			<td><input type="text" name="lang_enabled" value="{this>lang_enabled}" /></td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Adatbázis utótagok</h3>
+				<div class="small">Az engedélyezett nyelvekhez rendelt adatbázis tábla 
+				postfixek. A többnyelvű adatok megjelenítéséhez a rendszer több - általában
+				azonos tartalmat kezelő - táblát használ. Ilyen esetekben az adott nyelvhez
+				tartozó táblákat az itt megadott utótaggal toldja meg.
+				Az értékeket vesszővel elválasztva, szóközök nélkül kell felsorolni.</div>
+				<div class="example">Például: <span>,_en,_de</span></div>
+			</td>
+			<td><input type="text" name="lang_postfix" value="{this>lang_postfix}" /></td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Alapértelmezett pénznem</h3>
+				<div class="small">Az alapértelmezett valuta kódja az 
+				<a href="http://en.wikipedia.org/wiki/ISO_4217#Active_codes" target="_blank">ISO 4217</a> alapján.
+				Ha nincs még beállítva a valuta kódja, akkor az oldal erre a beállításra
+				fog váltani. Megjegyzendő, hogy a beállított és használt kódokat az ISO
+				szabvánnyal ellentétben csupa kisbetűvel kell írni.</div>
+				<div class="example">Például: <span>huf</span></div>
+			</td>
+			<td><input type="text" name="currency_default" value="{this>currency_default}" /></td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Engedélyezett pénznemek</h3>
+				<div class="small">Az engedélyezett valuták kódjainak listája, szintén
+				az ISO 4217 alapján. Ha a program bármelyik bővítménye pénzügyi adatokat
+				jelenít meg, s azok többféle pénznemben értelmezhetőek, akkor a felhasználóknak
+				ezen lista alapján van lehetőségük váltani. Az értékeket vesszővel elválasztva, 
+				szóközök nélkül kell felsorolni.</div>
+				<div class="example">Például: <span>huf,eur,usd</span></div>
+			</td>
+			<td><input type="text" name="currency_enabled" value="{this>currency_enabled}" /></td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Alapértelmezett e-mail cím</h3>
+				<div class="small">Ha az adott programrészben másképp nincs
+				meghatározva, akkor ez az e-mail cím lesz a feladónál megjelölve.</div>
+				<div class="example">Például: <span>info@domainnev.hu</span></div>
+			</td>
+			<td><input type="text" name="default_email_address" value="{this>default_email_address}" /></td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Alapértelmezett e-mail feladó</h3>
+				<div class="small">Ha az adott programrészben másképp nincs
+				meghatározva, akkor ez a név jelenik meg a feladónál.</div>
+				<div class="example">Például: <span>Minta Kálmán</span></div>
+			</td>
+			<td><input type="text" name="default_email_name" value="{this>default_email_name}" /></td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Permalinkek</h3>
+				<div class="small">Ezzel a mezővel lehet engedélyezni a program
+				számára az URL-ek dinamikus felülírását. Ha ennek az értéke 1, akkor
+				az oldalak hivatkozásai beszédes formában jelennek meg, javítva
+				ezzel azok indexelését az egyes keresőoldalak adatbázisában. Fontos,
+				hogy az engedélyezés előtt egyeztessünk a rendszergazdával, hogy az
+				un. Apache ReWrite modul engedélyezve van a weblaunk számára.</div>
+				<div class="example">Például: <span>0</span></div>
+			</td>
+			<td><input type="text" name="permalinks" value="{this>permalinks}" /></td>
+		</tr>
+	</table>
+	
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {});
+</script>
+				

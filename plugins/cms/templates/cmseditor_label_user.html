@@ -1,0 +1,17 @@
+<tr>
+	<td class="title">{this>title}{this>tip}</td>
+	<td class="editor">
+		<input type="hidden" name="{this>name}" value="{this>value}" />
+		<a id="user{this>userid}" href="mailto:{this>email}" title="E-mail küldése">
+		<nobr>{this>fullname}</nobr></a>
+		<div class="tooltip">
+			<h3>{this>fullname}</h3>
+			<div><label>Azonosító:</label>{this>username}</div>
+			<div><label>E-mail cím:</label>{this>email}</div>
+			<div><label>Telefon:</label>{this>phone}</div>
+			<div><label>Cím:</label>{this>address}</div>
+			<div><label>Cégnév:</label>{this>company}</div>
+		</div>
+		<script>$('a#user{this>userid}').tooltip({position:'center right',offset:[0,5]});</script>
+	</td>
+</tr>

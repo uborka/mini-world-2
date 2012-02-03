@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="hu-HU" xmlns="http://www.w3.org/1999/xhtml" dir="ltr" xml:lang="hu">
+
+<head>
+	<title>FÜGE² CMS - Súgó</title>
+	<meta http-equiv=Content-Type content="text/html; charset=utf-8" />
+	<meta name="description" content="PTI WPA 3.0" />
+	<meta name="robots" content="noindex,nofollow" />
+	<link href="/favicon.gif" rel="shortcut icon" />
+	<link rel="stylesheet" href="/plugins/webshop/help/help.css" type="text/css" media="screen,print" />
+</head>
+<!--
+/*
+ * PTI WPA - Web Page Admin 3.0
+ * Copyright (C) 2010; PTI Kft.;
+ *
+ * Ez a programkönyvtár szabad szoftver; terjeszthető illetve módosítható a
+ * Free Software Foundation által kiadott GNU Lesser General Public License
+ * dokumentumban leírtak, akár a licenc 2.1-es, akár (tetszőleges) későbbi
+ * változata szerint.
+ *
+ * Ez a programkönyvtár abban a reményben kerül közreadásra, hogy hasznos lesz,
+ * de minden egyéb GARANCIA NÉLKÜL, az ELADHATÓSÁGRA vagy VALAMELY CÉLRA VALÓ
+ * ALKALMAZHATÓSÁGRA való származtatott garanciát is beleértve. További
+ * részleteket a GNU Lesser General Public License tartalmaz.
+ *
+ * A felhasználónak a programmal együtt meg kell kapnia a GNU Lesser
+ * General Public License egy példányát; ha mégsem kapta meg, akkor
+ * ezt a Free Software Foundationnak küldött levélben jelezze
+ * (cím: Free Software Foundation Inc., 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.)
+ */
+-->
+
+<body id="body">
+
+<div id="wrapper">
+
+	<div class="toc">
+		<h3>Tartalom</h3>
+		<ol>
+			<li><a href="/plugins/webshop/help/1-navigation.html" target="help">Navigálás a CMS-ben</a></li>
+			<li><a href="/plugins/webshop/help/2-content-edit.html" target="help">Tartalomkezelés</a></li>
+			<li><a href="/plugins/webshop/help/3-user-edit.html" target="help">Felhasználókezelés</a></li>
+			<li><a href="/plugins/webshop/help/4-webshop.html" target="help">webSHOP</a>
+			<ol>
+				<li><a href="/plugins/webshop/help/4-1-products.html" target="help">Termékek kezelése</a></li>
+				<li><a href="/plugins/webshop/help/4-2-export-import.html" target="help">Termék export/import</a></li>
+				<li><a href="/plugins/webshop/help/4-3-new-product-type.html" target="help">Új termék típus beállítása</a></li>
+				<li><a href="/plugins/webshop/help/4-4-orders.html" target="help">Megrendelések kezelése</a></li>
+			</ol></li>
+		</ol>
+	</div>
+
+	<h1>Navigálás a CMS-ben</h1>
+
+	<h3>Először is, mi az a CMS?</h3>
+	
+	<p>A CMS egy rövídítés: <strong>Content Management System</strong>, azaz tartalomkezelő rendszer.
+	A fejlettebb honlapok tartalmának kezelését megkönyítő felület, úgy nevezett
+	back-page (háttér oldal, melyet a látogatók nem látnak és használhatnak).
+	A használata valamilyen hitelesítést, azonosítást követel meg.</p>
+	
+	<h3>A fejléc funkciói</h3>
+	
+	<p>A fejléc mindössze három funkciót lát el: visszatérést az áttekintő lapra,
+	lehetőséget az előnézetre és kilépési funkciót.</p>
+	
+	<p>A fejléc bal felső sarka - a FÜGE² logó - egyszerű visszalépést biztosít
+	az áttekintő oldalra. Az áttekintő oldal pedig a leggyakrabban használt
+	funkciókat tartalmazza, kifejezetten a webSHOP-okhoz optimalizálva.</p>
+	
+	<p>Az előnézet nevével ellentétben nem az épp szerkesztett, vagy böngészett
+	adatok előnézetét biztosítja, hanem egyszerűen megnyitja az ön honlapját
+	egy új ablakban - illetve új lapon, a böngészője beállításaitól függően.
+	Így könnyedén ellenőrizheti a tartalom változásait a nélkül, hogy a
+	CMS-ből ki kellene lépnie.</p>
+	
+	<p>A kilépést nem kell magyarázni. Habár a CMS automatikusan is kijelentkezik,
+	ha ön nem csinált semmit az elmúlt órában, de azt javasoljuk hogy ha
+	befejezte a munkát használja ezt a funkciót.</p>
+	
+	<h3>Az oldalsó menük kezelése</h3>
+	
+	<p>A CMS legrőbb témaköreit a bal oldali menük tartalmazzák. Ezek 
+	alapértelmezében zárva vannak, és a menüsorok végén levő [+] ikonra
+	kattintva lehet kinyitni azokat. Az egyes menük megjegyzik az állapotukat.</p>
+	
+	<p>A menük közül egyszerre csak egy lehet kiválasztva - ezt kiemelve
+	láthatjuk. Az ez alá tartozó lista, illetve szerkesztő kezelése középen
+	érhető el.</p>
+	
+	<h3>A listák funkciói</h3>
+	
+	<p>A kiválasztott menüponthoz tartozó adatok egy - szükség esetén könnyedén
+	átkonfigurálható - listában jelennek meg. A listák fejlécén választhatjuk
+	ki, hogy az adatokat melyik szempont szerint rendezzük. A rendezés irányának
+	megfordításához csak kattintsunk újra a fejléc fülére.</p>
+	
+	<p>A fejlécben található még a szűrési feltételek beállítása. Ez mindig
+	az adott oszlophoz igazodik - vagyis az adatokat azok alapján
+	szürhetjük, ami alapján rendezzük. Egyszerre csak egyféle szűrés és
+	rendezés választható ki. Az egyes adattípusok alapján eltérő szűrési
+	módszerek érhetőek el:</p>
+	
+	<ul>
+		<li>Szöveges adat (pl. címnél):</li>
+		<li>Felsorolásoknál:</li>
+		<li>Dátum és szám esetén:</li>
+		<li>Hivatkozott adatoknál:</li>
+	</ul>
+	
+	<p>A szűrés alatt ott vannak az adatok. Minden sor elején található
+	egy ikon, amelyre kattintva a kiválasztott rekord szerkeszthető. Ugyanezt
+	a célt szolgálja az első oszlopban található kulcs mező is. Ehhez hasonlóan
+	a sor végén egy törlésre szolgáló ikon található. Figyelem! A rendszer 
+	a törlés előtt nem tesz fel plusz kérdéseket!</p>
+	
+	<p>A listák alján találhatóak a lapozási funkciók, és annak a beállítása, 
+	hogy oldalanként hány sor jelenik meg (ide beírva egy másik értéket az
+	Enter leütése után frissül csak a lista). Valamint itt jelennek meg a listához
+	kapcsolódó extra funkciók - jellemzően ez legtöbbször az új rekord
+	felvételére vonatkozó gomb.</p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+<tr>
+	<td class="title">{this>title}{this>tip}</td>
+	<td class="editor">
+		<textarea rows="5" name="{this>name}" id="{this>name}" >{this>value}</textarea>
+		<script type="text/javascript">
+		$(window).ready(function(){
+			CKEDITOR.replace('{this>name}',{ 
+				toolbar: '{this>toolbar}',
+				customConfig: '/js/ckconfig.js',
+				contentsCss: '{this>theme_path}/ckeditor.css'
+				})
+		});
+		</script>
+	</td>
+</tr>

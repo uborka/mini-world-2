@@ -1,0 +1,82 @@
+* { margin: 0; padding: 0; }
+body {
+	background-color: #eee;
+	color: #333;
+	font-family: sans-serif;
+	font-size: 10pt;
+}
+h1 {
+	background-image: url(images/fuge2-logo.png);
+	width: 320px;
+	height: 54px;
+	margin: 200px auto 10px auto;
+	overflow: hidden;
+	text-indent: -1000px;
+}
+form#logonform {
+	width: 320px;
+	margin: 0 auto;
+	border: 1px solid #666;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	box-shadow: 0 0 10px 10px #ccc;
+	-moz-box-shadow: 0 0 10px 10px #ccc;
+	-webkit-box-shadow: 0 0 10px 10px #ccc;
+	background: #fff;
+}
+form#logonform p {
+	margin: 5px;
+}
+form#logonform p.message_error {
+	background-color: #c00;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	color: #fff;
+	padding: 5px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 9pt;
+}
+form#logonform p.message_ok {
+	color: #090;
+	padding: 5px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 8pt;
+}
+form#logonform p label {
+	display: block;
+	font-size: 8pt;
+}
+form#logonform p input[type=text],
+form#logonform p input[type=password] {
+	width: 304px;
+	padding: 2px;
+	border: 1px solid #666;
+}
+form#logonform p span.remember {
+	/* display: inline-block; */
+	display: none;
+	width: 150px;
+	margin: 0 6px 0 0;
+}
+form#logonform p span.remember label {
+	display: inline;
+}
+form#logonform p input[type=submit] {
+	display: inline-block;
+	width: 150px;
+}
+div#debug_info {
+	display: none;
+	background-color: #fff;
+	color: #000;
+	text-align: left;
+	position: absolute;
+	width: 100%;
+	margin-top: 10px;
+	font-size: 8pt;
+	overflow: hidden;
+}

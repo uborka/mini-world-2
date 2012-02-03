@@ -1,0 +1,5 @@
+Plug-in: Üzenetküldés
+Version: 1.0 (alfa)
+Depends: cms
+Copyright: Copyright by PTI Ltd. (c) 2010.
+Description: Felületet biztosít az e-mail üzenetek küldéséhez a felhasználók számára.

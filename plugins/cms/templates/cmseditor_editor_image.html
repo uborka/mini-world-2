@@ -1,0 +1,17 @@
+<tr>
+	<td class="title">{this>title}{this>tip}</td>
+	<td class="editor">
+		<span>
+			<input type="text" name="{this>name}" id="{this>name}" 
+				value="{this>value}" maxlength="{this>maxlength"
+				style="width:60%;" />
+		</span>
+		<span style="width:10%;">
+			<nobr>{this>preview}</nobr>
+		</span>
+		<span style="width:30%;">
+			<input id="browse_{this>name}" type="button" value="Böngészés a szerveren" onclick="$('#{this>name}').ptiBrowseServer();" />
+		</span>
+		<script type="text/javascript">$('#browse_{this>name}').button();</script>
+	</td>
+</tr>
