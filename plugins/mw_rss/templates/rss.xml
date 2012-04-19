@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule">
+    <channel>
+        <title>{this>title}</title>
+        <link>{this>url}</link>
+        <description>{this>description}</description>
+        <language>hu-hu</language>
+        <copyright>Copyright 2012, mini-world.hu</copyright>
+        <pubDate>{this>publish_date}</pubDate>        
+        <generator>mini-world.hu</generator>
+        <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+{this>items}
+    </channel>
+</rss>

@@ -1,0 +1,73 @@
+<!-- MODUL:USERBOX BEGIN (userbox_logged.html) -->
+{this>message}
+<ul id="user">
+	<li>
+		<a class="avatar" href="#" title="Személyes beállítások">
+			<img src="{this>avatar_url}" />
+			{this>fullname}
+		</a>
+	</li>
+	<li><a class="upload" href="#" title="Képfeltöltés">Képfeltöltés</a></li>
+	<li><a class="myalbum" href="/album/{this>username}.html" title="Saját album">Saját album</a></li>
+	{modul:mw_unviewed_comments}
+	<li><a class="logoff" href="?a=logoff" title="Kilépés">Kilépés</a></li>
+</ul>
+
+<form id="upload" action="/ajax.php?a=mw_image_upload" method="post" enctype="multipart/form-data">
+	<input type="hidden" name="a" value="mw_image_upload" />
+	<div>
+		<span id="btn">
+			<input type="file" name="files[]" multiple />
+			Képek kiválasztása...
+		</span>
+		<span class="pb"></span>
+		<input type="submit" value="Képek feltöltése" />
+	</div>
+<!-- 	<div>
+		<input type="checkbox" name="for_album" value="1" id="for_album" />
+		<label for="for_album">A kiválasztott képek feltölése az aktuális kép albumába.</label>
+	</div> -->
+	<div>
+		Egyszerre több képet is kiválaszthatsz. A feltöltésük után automatikusan 
+		a saját albumodba iránítunk, ahol rögtön megadhatod a feltöltött képek
+		címét, kategóriáját, leírását.
+	</div>
+</form>
+
+<script src="/templates/default/js/jquery.form.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#user > li > a').tooltip({position: 'bottom center',effect: 'slide',tipClass: 'tooltip',offset: [15,0]});
+	$('#user a.upload').click(function(){
+		$('#upload').toggle('slide',{direction: 'up'});
+		return false;
+	});
+	$('#upload .pb').progressbar({value: 0});
+	$('#upload').ajaxForm({
+	    beforeSend: function() {
+	    	$('#upload input[type=submit]').attr('disabled',true);
+			$('#upload .pb').progressbar('value', 0);
+	    },
+	    uploadProgress: function(event, position, total, percentComplete) {
+	    	$('#upload .pb').progressbar('value', percentComplete);
+	    },
+		complete: function(xhr) {
+			response = eval('('+xhr.response+')');
+			/* Uzenet a visszateresi ertektol fuggoen */
+			if (response.status == 'ok'){
+				$('#upload').hide('slide',{direction: 'up'},function(){
+					$('#upload').append(response.message);
+					setTimeout("document.location='/album/{this>username}.html'",5000);
+				});
+			}else{
+				$('#upload').hide('slide',{direction: 'up'},function(){
+					$('#upload').append(response.message);
+				});
+			}
+			$('#upload .pb').progressbar('value', 0);
+			$('#upload input[type=submit]').attr('disabled',false);
+		}
+	}); 
+});
+</script>
+<!-- MODUL:USERBOX END -->

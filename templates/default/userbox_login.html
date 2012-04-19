@@ -1,0 +1,35 @@
+<!-- MODUL:USERBOX BEGIN (userbox_login.html) -->
+<ul id="user">
+	<li><a class="regist" href="http://inkvizitor.hu/index.php/member/register/" title="Regisztrálás" target="_blank">Regisztrálás</a></li>
+</ul>
+<form id="login" action="/" method="post">
+	<input type="hidden" name="a" value="logon" />
+	{this>message}
+	<p>
+		<label for="usr">Azonosító</label>
+		<input type="text" name="usr" id="usr" value="{session:usr}" />
+		<span>
+			<input type="checkbox" name="auto" id="auto" value="1" checked="checked" />
+			<label for="auto">Maradjon bejelentkezve</label>
+		</span>
+	</p>
+	<p>
+		<label for="psw">Jelszó</label>
+		<input type="password" name="psw" id="psw" value="" />
+		<span><a href="#">Elfelejtetted a jelszavad?</a></span>
+	</p>
+	<p class="btn">
+		<label>&nbsp;</label>
+		<input type="submit" name="fs" value="Belépés" />
+	</p>
+</form>
+
+<script type="text/javascript">
+$(function(){
+	$('#user a').tooltip({position: 'bottom center',effect: 'slide',tipClass: 'tooltip',offset: [15,0]});
+	$('#user a.login').click(function(){
+		$('form#login').toggle('blind');
+	});
+});
+</script>
+<!-- MODUL:USERBOX END -->

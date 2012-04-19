@@ -1,0 +1,26 @@
+<ul class="breadcrumb">
+	<li><a class="home" href="/" title="Ugrás a Mini-World nyitólapjára">Mini-World</a></li>
+	<li><a href="{this>url}">{this>title}</a></li>
+</ul>
+
+{this>pagination}
+
+<h1>{this>title}</h1>
+
+<div class="album">
+	{this>items}
+	<hr/>
+	{this>pagination}
+	<hr/>
+</div>
+
+{this>message}
+
+<script type="text/javascript">
+$(function(){
+	$('.album span.rank[title]').tooltip({position: 'top center',effect: 'slide',tipClass: 'tooltip',offset: [0,0]});
+	$('.album a.delete').click(function(){
+		return confirm('Biztos törlöd a képet?');
+	});
+});
+</script>

@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html lang="hu" xmlns="http://www.w3.org/1999/xhtml" xml:lang="hu"> 
+<head> 
+	<title>{this>title} | Mini-World</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="content-language" content="hu-hu" /> 
+	<meta name="keywords" content="{this>meta_keywords}" />
+	<meta name="description" content="{this>meta_description}" />
+	<meta name="robot" content="{this>meta_robot}" />
+ 	{this>css}
+	{this>scripts}
+	{this>mw_rss}
+	<!--[if lte IE 7]>
+	<link href="/templates/default/site_ie.css?v={this>svn_revision}" rel="stylesheet" type="text/css" media="screen" />
+	<![endif]-->
+	<script type="text/javascript" src="/js/jquery.ui/jquery-ui-1.8.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.plugins/jquery.tools.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.plugins/jquery.scrollto.js"></script>
+	<link href="/favicon.png" rel="shortcut icon" />
+</head>
+
+<body>
+
+	<div id="top">
+	
+		<h2><a href="/">Mini-World</a></h2>
+	
+		{modul:mw_categories}
+		
+		{modul:mw_top_categories}
+	
+		{modul:userbox}
+	
+	</div>
+	
+	<div id="messages"></div>
+
+	<div id="content">{content}</div>
+		
+	{modul:basemenu}
+
+<!-- Opcionálisan ide kerülnek az oldal betöltését befolyásoló Javascript-ek.
+Ilyen megoldással tölti be alapesetben az oldalt/kategóriát/terméket
+egy egyszerű AJAX hívással. Ugyanezt alkalmazza a szavazás betöltéséhez
+is. -->
+<script type="text/javascript">$(function(){});</script>
+
+{this>finisher_code}
+
+</body>
+
+</html>

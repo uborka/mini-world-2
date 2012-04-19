@@ -1,0 +1,15 @@
+<div class="trophy">
+	<div>
+		<input type="radio" name="mw_trophy_id" id="mw_trophy_id_0" {this>checked_selected} />
+		<label for="mw_trophy_id_0">NINCS</label>
+{this>items}
+		<hr/>
+	</div>
+	<label for="mw_trophy_year">Évszám:</label>
+	<input type="text" name="mw_trophy_year" id="mw_trophy_year" value="{this>mw_trophy_year}"/>
+</div>
+<script type="text/javascript">
+$(function(){
+	$('div.trophy input[name=mw_trophy_id]').button();
+});
+</script>

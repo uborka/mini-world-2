@@ -1,3 +1,14 @@
 .project
 .buildpath
 .settings
+access.inc.php
+config.inc.php
+design
+install
+info.php
+items/_temp/*
+items/_thumbs/*
+items/images/*
+items/miniworld/*
+items/originals
+plugins/inkvizitor_auth

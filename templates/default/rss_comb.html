@@ -1,0 +1,21 @@
+<div class="blogs">
+	<h2>Blogfigyelő</h2>
+	<ul class="feed">
+		{this>items}
+	</ul>
+	<hr/>
+</div>
+
+<script type="text/javascript">
+$(function(){
+	$('.blogs div.desc').each(function(index,item){
+		_p = $(item).children('p');
+		_ho = $(item).height();
+		_hi = _p.height();
+		if (_hi > _ho){
+			$(item).append('<div class="scrollbar"><a></a></div>');
+			$(item).css('padding-right',20);
+		}
+	});
+});
+</script>

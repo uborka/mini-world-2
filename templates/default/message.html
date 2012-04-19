@@ -1,0 +1,12 @@
+<div id="message{this>id}" class="message">
+	<a class="close">×</a>
+	<div class="{this>class}">{this>description}</div>
+</div>
+<script>
+$(function(){
+	$('#message{this>id}').detach().appendTo('#messages');
+	$('#message{this>id}').show('drop');
+	$('#message{this>id} a.close').click(function(){$('#message{this>id}').hide('drop');});
+	setTimeout("$('#message{this>id}').hide('drop')",5000);
+});
+</script>

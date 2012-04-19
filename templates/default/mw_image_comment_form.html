@@ -1,0 +1,36 @@
+<form id="commentform" action="/ajax.php" method="post">
+	<input type="hidden" name="a" value="mw_image_comment" />
+	<input type="hidden" name="imgid" value="{session:imgid}" />
+	<p>
+		<label>Kommentár:</label>
+		<textarea name="comment"></textarea>
+	</p>
+	<p>
+		<input type="submit" value="Kommentár elküldése" />
+	</p>
+</form>
+<script type="text/javascript">
+$(function(){
+	$('.mini a.reply[rel]').click(function(){
+		$('#commentform textarea').val('@'+$(this).attr('rel')+': ');
+		$('#commentform').scrollTo();
+		$('#commentform textarea').focus();
+	});
+	$('#commentform').submit(function(){
+		$.ajax({
+			url: '/ajax.php',
+			data: $(this).serialize(),
+			type: 'POST',
+			success: function(data,status){
+				$('#commentform').after(data);
+				$('.mini p.comment:first').hide().show('blind');
+			},
+			error: function(xhr,status){
+				$('#commentform').after(xhr.responseText);
+			}
+		});
+		return false;
+	});
+	
+});
+</script>

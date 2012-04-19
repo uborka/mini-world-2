@@ -1,0 +1,13 @@
+<li>
+	<a class="comments" href="#" title="{this>unviwed_comment_nums} olvasatlan kommentár">Kommentárok</a>
+	<b class="comments">{this>unviwed_comment_nums}</b>
+	<div id="unviewed_comments"><ul>{this>items}</ul></div>
+</li>
+<script type="text/javascript">
+$(function(){
+	$('#user a.comments').click(function(){
+		$('#unviewed_comments').toggle();
+		return false;
+	});
+});
+</script>

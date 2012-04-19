@@ -1,0 +1,90 @@
+<ul class="breadcrumb">
+	<li><a class="home" href="/" title="Ugrás a Mini-World nyitólapjára">Mini-World</a></li>
+	<li><a href="{this>user_album_url}" title="{this>user_name} összes képe">{this>user_name}</a></li>
+	<li><a href="{this>user_category_album_url}" title="{this>user_name} összes képe a {this>category_title} kategóriában">{this>category_title}</a></li>
+	<li><a href="{this>url}">{this>title}</a></li>
+</ul>
+
+<ul class="options mini-options">
+	<li><a href="#mini-info" class="info toggle" title="Kép információk"></a></li>
+	<li><a href="#facebook" class="facebook toggle" title="Megosztás a facebook-on"></a></li>
+	<li><a href="#twitter" class="twitter toggle" title="Megosztás a twitter-en"></a></li>
+	<li><a href="#iwiw" class="iwiw toggle" title="Megosztás az iWIW-en"></a></li>
+	<li><a href="#bbcode" class="bbcode toggle" title="Megosztás az inkvizítoron"></a></li>
+	<li><a href="#" class="download" title="Letöltés"></a></li>
+	<!-- <li><a href="#" class="like" title="101 embernek tetszik"></a><b class="likes">101</b></li> -->
+</ul>
+
+{this>user_func}
+
+{this>moderator_func}
+
+<h1>{this>title}</h1>
+
+<div class="image">
+
+	<div id="mini-info" class="tools">
+		<div class="artist">
+			<p>
+				<label>Alkotó:</label> 
+				<a href="{this>user_album_url}" title="{this>user_name} összes képe">{this>user_name}</a>
+				<a class="artist-info" href="#" title="{this>user_name} Mini-World profilja">?</a>
+			</p>
+			<p><label>Kategória:</label> <a href="{this>category_url}" title="Az összes kép a {this>category_title} kategóriában">{this>category_title}</a></p>
+			<p><label>Feltöltés időpontja:</label> {this>create_date}</p>
+			{this>moderator_info}
+			{modul:mw_image_comment_nums}
+			{modul:mw_image_rates}
+			{modul:mw_image_views}
+		</div>
+		<div class="photo">
+			{modul:mw_image_details}
+		</div>
+		<hr />
+	</div>
+	
+	<div id="artist-info" class="tools"></div>
+	
+	{modul:mw_social_facebook}
+	{modul:mw_social_twitter}
+	{modul:mw_social_iwiw}
+	{modul:mw_social_bbcode}
+	
+	<div class="mini">
+	
+		<img class="mini" src="{this>image_980_url}" rel="{this>image_url}" alt="{this>title}" />
+		
+		{modul:mw_thropy:big}
+
+		<p id="desc">{this>desc}</p>
+		
+		<br/>
+
+		{modul:mw_image_comments}
+	
+	</div>
+	
+</div>
+
+<script type="text/javascript">
+$(function(){
+	$('.mini-options a').tooltip({position: 'top center',effect: 'slide',tipClass: 'tooltip',offset: [5,0]});
+	$('.mini-options a.download').click(function(){
+		$(this).attr('href','/ajax.php?a=mw_image_download&imgid={this>id}&url='+$('img.mini').attr('rel'));
+	});
+	$('.mini-options a.toggle').click(function(){
+		$($(this).attr('href')).toggle('blind');
+		return false;
+	});
+	$('a.artist-info').click(function(){
+		if ($('#artist-info').html()==''){
+			$('#artist-info').load('/ajax.php?a=mw_user&uid={this>user_id}',function(){
+				$('#artist-info').show('blind');
+			});
+		}else{
+			$('#artist-info').toggle('blind');
+		}
+		return false;
+	});
+});
+</script>

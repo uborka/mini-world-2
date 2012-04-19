@@ -87,7 +87,8 @@ class CMS extends Site
 		$this->call_prefunctions("adminsite_init");
 		
 		// Az oldal sablonjának betöltése
-		if ($this->user->login_ok)
+		$user = unserialize($_SESSION["user"]); 
+		if ($user->login_ok)
 		   	$this->load_template("site.html");
 		else
 			$this->load_template("logon.html");

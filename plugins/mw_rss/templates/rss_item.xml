@@ -1,0 +1,18 @@
+<item>
+	<title>{this>title}</title>
+	<link>{this>url}</link>
+	<guid isPermaLink="true">{this>url}</guid>
+	<pubDate>{this>publish_date}</pubDate>
+	<media:title type="plain">{this>title}</media:title>
+	<media:keywords></media:keywords>
+	<media:rating>nonadult</media:rating>
+	<media:category label="{this>category_title}">/{this>category_title}</media:category>
+	<media:credit role="author" scheme="urn:ebu">{this>user_name}</media:credit>
+	<media:credit role="author" scheme="urn:ebu">{this>user_avatar}</media:credit> 
+	<media:copyright url="{this>user_album_url}">Copyright {this>year} *{this>user_name}</media:copyright>
+	<media:description type="html"><![CDATA[ {this>desc} ]]></media:description>
+	<media:thumbnail url="{this>host}{this>image_240_url}" height="240" width="240"/>
+	<media:content url="{this>host}{this>image_url}" height="{this>height}" width="{this>width}" medium="image"/>            
+	<media:content url="{this>host}{this>image_url}" medium="document"/>            
+	<description><![CDATA[ <p>{this>desc}<p><p><img src="{this>host}{this>image_240_url}" alt="{this>title}"/></p> ]]></description>             
+</item>

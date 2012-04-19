@@ -1,0 +1,76 @@
+<script type="text/javascript" src="/templates/default/js/jquery.jcrop.min.js"></script>
+<link type="text/css" rel="stylesheet" href="/templates/default/jquery.jcrop.css" />
+
+<ul class="breadcrumb">
+	<li><a class="home" href="/" title="Ugrás a Mini-World nyitólapjára">Mini-World</a></li>
+	<li><a href="{this>user_album_url}" title="{this>user_name} összes képe">{this>user_name}</a></li>
+	<li><a href="{this>user_category_album_url}" title="{this>user_name} összes képe a {this>category_title} kategóriában">{this>category_title}</a></li>
+	<li><a href="{this>url}">{this>title}</a></li>
+</ul>
+
+<form id="image_editor" action="?" method="post">
+	<input type="hidden" name="a" value="mw_image_editor" />
+	<input type="hidden" name="todo" value="store" />
+	<input type="hidden" name="imgid" value="{this>id}" />
+	<input type="hidden" name="tn_coordinates" value="{this>tn_coordinates}" />
+
+<p class="user_func">
+	<a class="cancel" href="{this>url}">Mégsem</a>
+	<a class="save" href="#">Mentés</a>
+</p>
+
+<h1><input type="text" name="title" value="{this>title}" /></h1>
+
+<div class="image">
+
+	<div id="mini-info" class="tools">
+		<div class="artist">
+			<p>
+				<label>Alkotó:</label> 
+				<a href="{this>user_album_url}" title="{this>user_name} összes képe">{this>user_name}</a>
+			</p>
+			<p>
+				<label>Kategória:</label> 
+				{modul:mw_image_category_select}
+			</p>
+			<p><label>Feltöltés időpontja:</label> {this>create_date}</p>
+			{modul:mw_image_rates}
+		</div>
+		<div class="photo">
+			{modul:mw_image_details}
+		</div>
+		<br/>
+		{modul:mw_trophy_editor}
+	</div>
+	
+	<div class="mini">
+	
+		<img class="mini" src="{this>image_980_url}" alt="{this>title}" />
+		
+		<p><textarea name="desc">{this>desc}</textarea></p>
+
+	</div>
+	
+</div>
+
+</form>
+
+<script type="text/javascript">
+$(function(){
+	$('img.mini').Jcrop({
+		minSize: [240,240],
+		setSelect: {this>tn_coordinates},
+		aspectRatio: 1,
+		onChange: function(coords){
+			if (coords.w == coords.h){
+				_c = '['+coords.x+','+coords.y+','+coords.x2+','+coords.y2+']'
+				$('form#image_editor input[name=tn_coordinates]').val(_c);
+			}
+		}
+	});
+	$('form#image_editor a.save').click(function(){
+		$('form#image_editor').submit();
+		return false;
+	});
+});
+</script>

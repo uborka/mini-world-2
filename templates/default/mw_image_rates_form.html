@@ -1,0 +1,26 @@
+<script type="text/javascript" src="/templates/default/js/jquery.ui.stars.min.js"></script>
+<link type="text/css" rel="stylesheet" href="/templates/default/jquery.ui.stars.css" />
+<p>
+	<label>Értékeld:</label>
+	<span id="rate{this>image_id}"> 
+		<select name="rate">
+			<option value="1">Minimum</option>
+			<option value="2">Szép</option>
+			<option value="3">TTQ</option>
+			<option value="4">Kiváló</option>
+			<option value="5">Hibátlan</option>
+		</select>
+	</span>
+</p>
+<script type="text/javascript">
+$(function(){
+	$('#rate{this>image_id}').stars({
+		inputType: 'select',
+		oneVoteOnly: true,
+		callback: function(ui,type,value){
+			//alert(value);
+			$.post('/ajax.php?a=mw_image_rate&imgid={session:imgid}&rate='+value);
+		}
+	});
+});
+</script>

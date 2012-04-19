@@ -1,0 +1,22 @@
+<span class="options">
+	<a class="prev prev{this>id}"></a>
+	<span class="navi navi{this>id}"></span>
+	<a class="next next{this>id}"></a>
+</span>
+	
+<h1>{this>title}</h1>
+		
+<div class="album">
+	<div class="slideshow slideshow{this>id}">
+		<div class="scrollable">
+			{this>items}
+		</div>
+	</div>
+</div>
+		
+<script type="text/javascript">
+$(function(){
+	$('.slideshow{this>id}').scrollable({circular: true,next: '.next{this>id}',prev: '.prev{this>id}'}).navigator({activeClass: 'selected',navi: '.navi{this>id}'});
+	$('.slideshow{this>id} span.rank[title]').tooltip({position: 'top center',effect: 'slide',tipClass: 'tooltip',offset: [0,0]});
+});
+</script>

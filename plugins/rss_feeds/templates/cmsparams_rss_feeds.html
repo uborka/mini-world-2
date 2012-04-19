@@ -1,0 +1,78 @@
+<div id="rss_feeds">
+	
+	<table>
+		<tr>
+			<td>
+				<h3>A gyórsítótár mappája</h3>
+				<div class="small">Az RSS-eket a rendszer az megadott mappákba
+				menti le letöltés után. Így az egyes RSS-eket csak adott időszakonként
+				tölti le a forrásból - és frissíti. Ezzel gyorsítható az RSS-ek
+				feldolgozása, mivel azok letöltése a kiszolgáló szervertől függően
+				hosszabb időt vehet igénybe. Ha nem állítunk be mappát, akkor
+				az RSS-eket nem puffereli, hanem minden oldalbetöltésnél letölti.</div>
+				<div class="example">Például: <span>/items/_rsscache</span></div>
+			</td>
+			<td><input type="text" name="rss_cache_folder" value="{this>rss_cache_folder}" /></td>
+		</tr>
+		<tr>
+			<td>
+				<h3>A gyórsítótár pufferelési ideje</h3>
+				<div class="small">Ha meg van adva a gyorsítótár mappája, akkor
+				az RSS-eket az itt megadott időtartamig nem frissíti. Az időtartamot
+				másodpercekben kell megadni.</div>
+				<div class="example">Például: <span>86400</span></div>
+			</td>
+			<td><input type="text" name="rss_cache_time" value="{this>rss_cache_time}" /></td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Konverziós kódlap</h3>
+				<div class="small">Az RSS forrást az itt megadott kódlapra
+				konvertálja. Ha nincs megava kódlap, akkor változatlanul hagyja
+				az eredeti kódolást. Javasolt a kódolát a honlap kódolásához
+				igazítani.</div>
+				<div class="example">Például: <span>UTF-8</span></div>
+			</td>
+			<td><input type="text" name="rss_code_page" value="{this>rss_code_page}" /></td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Alapértelmezett kódlap</h3>
+				<div class="small">Ha a forrásnak nincs megadva a kódlapja,
+				akkor az itt megadott kódlapúnak tekinti.</div>
+				<div class="example">Például: <span>UTF-8</span></div>
+			</td>
+			<td><input type="text" name="rss_default_code_page" value="{this>rss_default_code_page}" /></td>
+		</tr>
+		<tr>
+			<td>
+				<h3>CDATA kezelés</h3>
+				<div class="small">Az XML CDATA adatait az itt megadott módon kezeli:</div>
+				<div class="small"><strong>nochange</strong>: Az adatokat változatlanul hagyja, azaz a szövegben
+				benne maradnak a CDATA nyitó és záró tagjai is.</div>
+				<div class="small"><strong>content</strong>: A CDATA nyitó- és zárótagokat eltávolítja, de 
+				a köztes tartalmat változatlanul hagyja.</div>
+				<div class="small"><strong>strip</strong>: A CDATA tagokat és a leírásban levő összes HTML
+				tagot eltávolítja. Vagyis a szövegrészt átalakítja egyszerű szöveggé.</div>
+				<div class="example">Például: <span>strip</span></div>
+			</td>
+			<td><input type="text" name="rss_cdata" value="{this>rss_cdata}" /></td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Leírás kezelése</h3>
+				<div class="small">Ha ezt a beállítást 1-esre állítjuk, akkor a
+				hírek leírásából (description) eltávolít minden HTML tagot. Ha az
+				érték 0, akkor változatlanul átveszi az eredeti forrás formázásait.</div>
+				<div class="example">Például: <span>0</span></div>
+			</td>
+			<td><input type="text" name="rss_striphtml" value="{this>rss_striphtml}" /></td>
+		</tr>
+	</table>
+	
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {});
+</script>
+				

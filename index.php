@@ -35,6 +35,8 @@ $site = new Site();
 // Az oldal kimenetnek elkészítése
 $site->time_before = $tb;
 $site->show();
+if (Core::$MEMCACHE)
+	Core::$MEMCACHE->close();
 // A kapcsolat bontása az SQL szerverrel
 Sql::disconnect();
 ?>
